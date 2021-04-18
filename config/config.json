@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "api-notebook-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/apiNotebook/ApiNotebookWebPart.js",
+          "manifest": "./src/webparts/apiNotebook/ApiNotebookWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {
+    "sandbox": {
+      "path": "./src/libs/notebook-sandbox.js",
+      "globalName": "sandbox"
+    }
+  },
+  "localizedResources": {
+    "ApiNotebookWebPartStrings": "lib/webparts/apiNotebook/loc/{locale}.js"
+  }
+}

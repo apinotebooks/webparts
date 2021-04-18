@@ -1,0 +1,12 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.12.1-rc.1",
+    "libraryName": "api-notebook-webpart",
+    "libraryId": "470e6463-21e4-495d-ab81-122038d33500",
+    "packageManager": "npm",
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
