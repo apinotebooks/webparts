@@ -29,7 +29,7 @@
   ],
   "loaderConfig": {
     "internalModuleBaseUrls": [
-      "<!-- PATH TO CDN -->"
+      "https://localhost:4321/dist/"
     ],
     "entryModuleId": "api-notebook-web-part",
     "scriptResources": {
