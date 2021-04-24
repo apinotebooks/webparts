@@ -2004,18 +2004,19 @@ var iframeResizer = createCommonjsModule(function (module) {
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 function loadDefaultSettings(opts, el) {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
     return {
         // We fall back to a specific starboard package version on jsdelivr, but ideally one would always specify their own URL that is locked to a specific version.
         src: (_b = (_a = opts.src) !== null && _a !== void 0 ? _a : el.getAttribute("src")) !== null && _b !== void 0 ? _b : "starboard-notebook-iframe-src-not-set",
         autoResize: (_c = opts.autoResize) !== null && _c !== void 0 ? _c : true,
         inPageLinks: (_d = opts.inPageLinks) !== null && _d !== void 0 ? _d : true,
-        sandbox: (_f = (_e = opts.sandbox) !== null && _e !== void 0 ? _e : el.getAttribute("sandbox")) !== null && _f !== void 0 ? _f : "allow-scripts allow-modals allow-same-origin allow-pointer-lock allow-top-navigation-by-user-activation allow-forms allow-downloads",
-        debug: (_g = opts.debug) !== null && _g !== void 0 ? _g : false,
-        onNotebookReadySignalMessage: (_h = opts.onNotebookReadySignalMessage) !== null && _h !== void 0 ? _h : function () { },
-        onContentUpdateMessage: (_j = opts.onContentUpdateMessage) !== null && _j !== void 0 ? _j : function () { },
-        onSaveMessage: (_k = opts.onSaveMessage) !== null && _k !== void 0 ? _k : function () { },
-        onMessage: (_l = opts.onMessage) !== null && _l !== void 0 ? _l : function () { },
+        heightCalculationMethod: (_e = opts.heightCalculationMethod) !== null && _e !== void 0 ? _e : "taggedElement",
+        sandbox: (_g = (_f = opts.sandbox) !== null && _f !== void 0 ? _f : el.getAttribute("sandbox")) !== null && _g !== void 0 ? _g : "allow-scripts allow-modals allow-same-origin allow-pointer-lock allow-top-navigation-by-user-activation allow-forms allow-downloads",
+        debug: (_h = opts.debug) !== null && _h !== void 0 ? _h : false,
+        onNotebookReadySignalMessage: (_j = opts.onNotebookReadySignalMessage) !== null && _j !== void 0 ? _j : function () { },
+        onContentUpdateMessage: (_k = opts.onContentUpdateMessage) !== null && _k !== void 0 ? _k : function () { },
+        onSaveMessage: (_l = opts.onSaveMessage) !== null && _l !== void 0 ? _l : function () { },
+        onMessage: (_m = opts.onMessage) !== null && _m !== void 0 ? _m : function () { },
         notebookContent: opts.notebookContent,
         notebookContainer: opts.notebookContainer,
         notebookVariables: opts.notebookVariables,
@@ -2027,7 +2028,7 @@ class StarboardNotebookIFrame extends HTMLIFrameElement {
         super();
         this.notebookEditMode = "edit";
         // The version of starboard-wrap
-        this.version = "0.2.3";
+        this.version = "0.3.1";
         this._notebookContent = "";
         this.constructorOptions = opts;
     }
@@ -2039,6 +2040,7 @@ class StarboardNotebookIFrame extends HTMLIFrameElement {
     }
     connectedCallback() {
         this.options = loadDefaultSettings(this.constructorOptions, this);
+        console.log(this.options);
         const checkOrigin = [new URL(this.options.src).origin];
         this.sandbox.value = this.options.sandbox;
         this.src = this.options.src;
@@ -2049,6 +2051,7 @@ class StarboardNotebookIFrame extends HTMLIFrameElement {
         iframeResizer({
             autoResize: this.options.autoResize,
             inPageLinks: this.options.inPageLinks,
+            heightCalculationMethod: this.options.heightCalculationMethod,
             checkOrigin: checkOrigin,
             log: this.options.debug,
             onMessage: async (data) => {

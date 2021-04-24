@@ -17,12 +17,14 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
     "group": { "default": "Other" },
-    "title": { "default": "api-notebook" },
-    "description": { "default": "api-notebook description" },
-    "officeFabricIconFontName": "Page",
+    "title": { "default": "API Notebook" },
+    "description": { "default": "api-notebook description" },    
+    "iconImageUrl": "https://edit.apinotebooks.com/images/adenin%20API%20Notebooks.png",
     "properties": {
-      "description": "api-notebook",
-      "notebookContent": "# Title"
+      "description": "API Notebook",
+      "notebookContent": "# Title",
+      "interactiveMode": false
     }
   }]
 }
+  

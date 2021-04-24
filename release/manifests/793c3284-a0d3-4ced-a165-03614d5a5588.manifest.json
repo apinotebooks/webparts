@@ -15,15 +15,16 @@
         "default": "Other"
       },
       "title": {
-        "default": "api-notebook"
+        "default": "API Notebook"
       },
       "description": {
         "default": "api-notebook description"
       },
-      "officeFabricIconFontName": "Page",
+      "iconImageUrl": "https://edit.apinotebooks.com/images/adenin%20API%20Notebooks.png",
       "properties": {
-        "description": "api-notebook",
-        "notebookContent": "# Title"
+        "description": "API Notebook",
+        "notebookContent": "# Title",
+        "interactiveMode": false
       }
     }
   ],
@@ -35,7 +36,7 @@
     "scriptResources": {
       "api-notebook-web-part": {
         "type": "path",
-        "path": "api-notebook-web-part_a44c0a1e6eb7d3188f28.js"
+        "path": "api-notebook-web-part_65b485658f293397dc10.js"
       },
       "@microsoft/sp-property-pane": {
         "type": "component",
@@ -44,7 +45,7 @@
       },
       "ApiNotebookWebPartStrings": {
         "type": "path",
-        "path": "ApiNotebookWebPartStrings_en-us_536e65149b0acf4d52c0043073b9fc59.js"
+        "path": "ApiNotebookWebPartStrings_en-us_e4c29714b001a2ea7188d016458676e8.js"
       },
       "@microsoft/sp-core-library": {
         "type": "component",
