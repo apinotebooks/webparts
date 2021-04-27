@@ -36,7 +36,7 @@
     "scriptResources": {
       "api-notebook-web-part": {
         "type": "path",
-        "path": "api-notebook-web-part_65b485658f293397dc10.js"
+        "path": "api-notebook-web-part_c72b38a97803184aee24.js"
       },
       "@microsoft/sp-property-pane": {
         "type": "component",

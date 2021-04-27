@@ -73,6 +73,12 @@ export default class ApiNotebookWebPart extends BaseClientSideWebPart<IApiNotebo
         src: "https://apinotebooks-sandbox.netlify.app",
         onContentUpdateMessage: function (evt) {
           this.notebookContainer.properties.notebookContent = evt.content;
+        },
+        /* tslint:disable:no-function-expression */
+        onMessage: function (evt) {
+          if(evt.type=="NAVIGATE_TO") {
+            window.parent.location = evt.url;
+          }
         }
       };
 
